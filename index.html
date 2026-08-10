@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metodologia de Pesquisa — Escola de Governo/MT · Prof. Alexandre Campos</title>
+  <meta name="description" content="Materiais e informações da disciplina de Metodologia de Pesquisa nos cursos de especialização da Escola de Governo do Estado de Mato Grosso." />
+  <style>
+    :root{
+      --bg:#eef1ea; --ink:#16241d; --green:#2f5d49; --muted:#56675c; --line:#c7d1c6; --card:#f6f8f4;
+    }
+    *{box-sizing:border-box} html,body{margin:0}
+    body{background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; font-weight:600; line-height:1.2; color:var(--ink)}
+    a{color:var(--green)}
+    .wrap{max-width:900px; margin:0 auto; padding:0 20px}
+
+    .topbar{border-bottom:1px solid var(--line)}
+    .topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
+    .brand{font-size:14px; font-weight:600; letter-spacing:.02em}
+    .back{font-size:13px; text-decoration:none; background:none; border:0; cursor:pointer; color:var(--green)}
+    .back:hover{text-decoration:underline}
+
+    .hero{padding:44px 0 6px}
+    .eyebrow{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--green); font-weight:700; margin:0 0 10px}
+    .hero h1{font-size:36px; margin:0 0 8px}
+    .hero .sub{font-size:17px; color:var(--muted); margin:0}
+
+    section{padding:24px 0}
+    h2{font-size:24px; margin:0 0 4px}
+    .lead{color:var(--muted); margin:0 0 18px}
+    p{margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
+    .block{display:block; border:1px solid var(--line); background:var(--card); padding:18px; text-decoration:none; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s; text-align:left; font:inherit; width:100%}
+    .block:hover{border-color:var(--green); background:#eef3ec}
+    .block .t{font-family:Georgia,serif; font-size:19px; font-weight:600; display:block; margin-bottom:4px}
+    .block .d{font-size:14px; color:var(--muted)}
+
+    .item{display:block; border:1px solid var(--line); background:var(--card); padding:14px 16px; text-decoration:none; color:var(--ink); transition:border-color .15s, background .15s}
+    .item:hover{border-color:var(--green); background:#eef3ec}
+    .item .t{font-weight:600; display:block; margin-bottom:2px}
+    .item .d{font-size:13px; color:var(--muted)}
+
+    .info{border-left:3px solid var(--green); background:var(--card); padding:14px 18px; margin:0 0 16px}
+    .empty{color:var(--muted); font-style:italic; padding:8px 0}
+    .hidden{display:none}
+
+    footer{border-top:1px solid var(--line); margin-top:24px}
+    footer .wrap{padding:20px; font-size:13px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px}
+    @media (max-width:560px){ .hero h1{font-size:28px} }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <span class="brand">Professor Alexandre Campos</span>
+      <a class="back" href="https://professoralexandre.com">← Portfólio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Escola de Governo · Mato Grosso</p>
+      <h1>Metodologia de Pesquisa</h1>
+      <p class="sub">Disciplina dos cursos de especialização &middot; Prof. Alexandre Campos</p>
+    </div>
+
+    <!-- ============ INÍCIO (os 4 blocos) ============ -->
+    <section id="view-inicio">
+      <div class="grid">
+        <button class="block" onclick="location.hash='#alunos'">
+          <span class="t">Alunos</span><span class="d">Frequência e avaliações</span>
+        </button>
+        <button class="block" onclick="location.hash='#recursos'">
+          <span class="t">Recursos didáticos</span><span class="d">Slides, textos e demais recursos diretamente relacionados às aulas</span>
+        </button>
+        <button class="block" onclick="location.hash='#producoes'">
+          <span class="t">Produções dos alunos</span><span class="d">Fichamentos, esboços dos projetos de pesquisa</span>
+        </button>
+        <button class="block" onclick="location.hash='#textos'">
+          <span class="t">Textos de apoio</span><span class="d">Produções bibliográficas que subsidiaram a disciplina ou que podem ajudar os alunos a trilharem os caminhos da pesquisa científica</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ SEÇÕES DE PDF (preenchidas pelo Catálogo) ============ -->
+    <section id="view-recursos" class="hidden">
+      <button class="back" onclick="location.hash=''">← Voltar</button>
+      <h2 style="margin-top:10px">Recursos didáticos</h2>
+      <p class="lead">Slides, textos e demais recursos diretamente relacionados às aulas.</p>
+      <div class="grid" data-cards="recursos"></div>
+    </section>
+
+    <section id="view-producoes" class="hidden">
+      <button class="back" onclick="location.hash=''">← Voltar</button>
+      <h2 style="margin-top:10px">Produções dos alunos</h2>
+      <p class="lead">Fichamentos, esboços dos projetos de pesquisa.</p>
+      <div class="grid" data-cards="producoes"></div>
+    </section>
+
+    <section id="view-textos" class="hidden">
+      <button class="back" onclick="location.hash=''">← Voltar</button>
+      <h2 style="margin-top:10px">Textos de apoio</h2>
+      <p class="lead">Produções bibliográficas que subsidiaram a disciplina ou que podem ajudar os alunos a trilharem os caminhos da pesquisa científica.</p>
+      <div class="grid" data-cards="textos"></div>
+    </section>
+
+    <!-- ============ ALUNOS ============ -->
+    <section id="view-alunos" class="hidden">
+      <button class="back" onclick="location.hash=''">← Voltar</button>
+      <h2 style="margin-top:10px">Alunos — Frequência e avaliações</h2>
+
+      <h3 style="font-size:16px; margin:18px 0 6px">Critérios gerais</h3>
+      <!-- Preenchido pela planilha Catálogo: linhas com secao = criterios -->
+      <div data-texto="criterios"></div>
+
+      <h3 style="font-size:16px; margin:18px 0 6px">Observações gerais</h3>
+      <!-- Preenchido pela planilha Catálogo: linhas com secao = observacoes -->
+      <div data-texto="observacoes"></div>
+
+      <h3 style="font-size:16px; margin:18px 0 6px">Sua nota e frequência</h3>
+      <p class="muted">
+        A consulta individual (cada aluno vê apenas a sua nota e frequência, com um código pessoal)
+        será ativada na próxima etapa. <em>[Fase 2 — em preparação]</em>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="ano"></span> Professor Alexandre Campos</span>
+      <span>escola.professoralexandre.com</span>
+    </div>
+  </footer>
+
+  <script>
+    // ====================== CONFIGURAÇÃO ======================
+    // Cole aqui o link da planilha "Catálogo de Materiais" publicada como CSV
+    // (Arquivo → Compartilhar → Publicar na Web → aba "Catálogo" → formato CSV).
+    // Enquanto vazio, o site mostra dados de exemplo para você ver o layout.
+    const CATALOGO_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNECfRl4jwHKhnmj7zcE09Q-Ocf-nwUCxmp99GtRjpBFx21fy-7o8HSL0Os1d8SKYiBXru4ZpN2ayP/pub?output=csv";
+    // ==========================================================
+
+    // Dados de exemplo (aparecem só enquanto o CSV acima estiver vazio).
+    const EXEMPLO = [
+      { secao:"criterios",   titulo:"", resumo:"A avaliação considera participação, fichamentos e o projeto de pesquisa final (média ponderada).", link:"" },
+      { secao:"criterios",   titulo:"", resumo:"Frequência mínima de 75% para aprovação, conforme o regulamento da Escola de Governo.", link:"" },
+      { secao:"observacoes", titulo:"", resumo:"As notas são lançadas ao longo do curso; consulte a sua na área individual, com o seu código pessoal.", link:"" },
+      { secao:"recursos",  titulo:"Aula 1 — Fundamentos da pesquisa", resumo:"Slides do primeiro encontro", link:"#" },
+      { secao:"recursos",  titulo:"Aula 2 — Problema e objetivos",    resumo:"Slides e roteiro da aula", link:"#" },
+      { secao:"producoes", titulo:"Modelo de fichamento",             resumo:"Estrutura sugerida para os fichamentos", link:"#" },
+      { secao:"textos",    titulo:"Metodologia científica (base)",    resumo:"Capítulos 1 a 3, leitura obrigatória", link:"#" },
+    ];
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // ---- CSV mínimo (trata aspas e vírgulas dentro de campos) ----
+    function parseCSV(text){
+      const rows=[]; let row=[], cur="", q=false;
+      for(let i=0;i<text.length;i++){
+        const c=text[i];
+        if(q){
+          if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c;
+        } else {
+          if(c==='"') q=true;
+          else if(c===',') { row.push(cur); cur=""; }
+          else if(c==='\n'){ row.push(cur); rows.push(row); row=[]; cur=""; }
+          else if(c==='\r'){ /* ignora */ }
+          else cur+=c;
+        }
+      }
+      if(cur!==""||row.length){ row.push(cur); rows.push(row); }
+      return rows;
+    }
+    function toObjects(rows){
+      if(!rows.length) return [];
+      const head=rows[0].map(h=>h.trim().toLowerCase());
+      return rows.slice(1).filter(r=>r.some(c=>c&&c.trim())).map(r=>{
+        const o={}; head.forEach((h,i)=>o[h]=(r[i]||"").trim()); return o;
+      });
+    }
+
+    function render(dados){
+      ["recursos","producoes","textos"].forEach(sec=>{
+        const grid=document.querySelector(`[data-cards="${sec}"]`);
+        const itens=dados.filter(d=>(d.secao||"").toLowerCase()===sec);
+        if(!itens.length){ grid.innerHTML='<p class="empty">Nenhum material publicado nesta seção ainda.</p>'; return; }
+        grid.innerHTML=itens.map(d=>{
+          const link=d.link&&d.link!=="#"?d.link:"#";
+          const tgt=link!=="#"?' target="_blank" rel="noopener"':"";
+          return `<a class="item" href="${link}"${tgt}><span class="t">${esc(d.titulo)}</span><span class="d">${esc(d.resumo)}</span></a>`;
+        }).join("");
+      });
+      // Textos livres (Alunos): critérios gerais e observações gerais.
+      ["criterios","observacoes"].forEach(sec=>{
+        const box=document.querySelector(`[data-texto="${sec}"]`);
+        if(!box) return;
+        const itens=dados.filter(d=>(d.secao||"").toLowerCase()===sec);
+        if(!itens.length){ box.innerHTML='<p class="empty">A ser preenchido.</p>'; return; }
+        box.innerHTML=itens.map(d=>`<p class="info">${esc(d.resumo||d.titulo)}</p>`).join("");
+      });
+    }
+    function esc(s){return (s||"").replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+
+    async function carregar(){
+      if(!CATALOGO_CSV_URL){ render(EXEMPLO); return; }
+      try{
+        const resp=await fetch(CATALOGO_CSV_URL);
+        const txt=await resp.text();
+        render(toObjects(parseCSV(txt)));
+      }catch(e){ render(EXEMPLO); }
+    }
+
+    // ---- Navegação por hash entre os "blocos" ----
+    const VIEWS=["inicio","recursos","producoes","textos","alunos"];
+    function route(){
+      const h=(location.hash||"#").replace("#","")||"inicio";
+      const atual=VIEWS.includes(h)?h:"inicio";
+      VIEWS.forEach(v=>document.getElementById("view-"+v).classList.toggle("hidden", v!==atual));
+      window.scrollTo(0,0);
+    }
+    window.addEventListener("hashchange", route);
+    route();
+    carregar();
+  </script>
+</body>
+</html>
