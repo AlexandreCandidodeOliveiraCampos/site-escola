@@ -3,227 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Metodologia de Pesquisa — Escola de Governo/MT · Prof. Alexandre Campos</title>
-  <meta name="description" content="Materiais e informações da disciplina de Metodologia de Pesquisa nos cursos de especialização da Escola de Governo do Estado de Mato Grosso." />
+  <title>Arquivo Vivo — Metodologia de Pesquisa</title>
+  <meta name="description" content="Biblioteca de materiais da disciplina de Metodologia de Pesquisa — Prof. Alexandre Campos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#eef1ea; --ink:#16241d; --green:#2f5d49; --muted:#56675c; --line:#c7d1c6; --card:#f6f8f4;
+      --bg:#f7f6f2; --ink:#173b4d; --muted:#5b7480; --line:#dfe3df; --card:#ffffff; --accent:#173b4d; --ochre:#b9822b;
     }
     *{box-sizing:border-box} html,body{margin:0}
-    body{background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
-    h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif; font-weight:600; line-height:1.2; color:var(--ink)}
-    a{color:var(--green)}
-    .wrap{max-width:900px; margin:0 auto; padding:0 20px}
+    body{background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans",Arial,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:"DM Serif Display",Georgia,serif; font-weight:400; line-height:1.15; color:var(--ink)}
+    a{color:var(--accent)}
+    .wrap{max-width:1040px; margin:0 auto; padding:0 22px}
 
-    .topbar{border-bottom:1px solid var(--line)}
-    .topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
-    .brand{font-size:14px; font-weight:600; letter-spacing:.02em}
-    .back{font-size:13px; text-decoration:none; background:none; border:0; cursor:pointer; color:var(--green)}
-    .back:hover{text-decoration:underline}
+    header.top{border-bottom:1px solid var(--line); background:var(--bg)}
+    header.top .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 22px}
+    .brand .t{font-family:"DM Serif Display",serif; font-size:20px; line-height:1}
+    .brand .s{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600}
+    .top a.back{font-size:13px; text-decoration:none; color:var(--muted)}
+    .top a.back:hover{color:var(--ink)}
 
-    .hero{padding:44px 0 6px}
-    .eyebrow{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--green); font-weight:700; margin:0 0 10px}
-    .hero h1{font-size:36px; margin:0 0 8px}
-    .hero .sub{font-size:17px; color:var(--muted); margin:0}
+    .hero{padding:44px 0 10px}
+    .hero h1{font-size:38px; margin:0 0 6px}
+    .hero p{color:var(--muted); margin:0}
 
-    section{padding:24px 0}
-    h2{font-size:24px; margin:0 0 4px}
-    .lead{color:var(--muted); margin:0 0 18px}
-    p{margin:0 0 12px}
-    .muted{color:var(--muted)}
+    .toolbar{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; padding:22px 0 6px}
+    .search{flex:1; min-width:220px; position:relative}
+    .search input{width:100%; border:1px solid var(--line); background:var(--card); padding:10px 12px; font:inherit; color:var(--ink); border-radius:0}
+    .search input:focus{outline:none; border-color:var(--accent)}
+    .count{font-size:13px; color:var(--muted); white-space:nowrap}
 
-    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
-    .block{display:block; border:1px solid var(--line); background:var(--card); padding:18px; text-decoration:none; color:var(--ink); cursor:pointer; transition:border-color .15s, background .15s; text-align:left; font:inherit; width:100%}
-    .block:hover{border-color:var(--green); background:#eef3ec}
-    .block .t{font-family:Georgia,serif; font-size:19px; font-weight:600; display:block; margin-bottom:4px}
-    .block .d{font-size:14px; color:var(--muted)}
+    .tabs{display:flex; flex-wrap:wrap; gap:8px; padding:12px 0 26px; border-bottom:1px solid var(--line); margin-bottom:26px}
+    .tab{font:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line); background:var(--card); color:var(--ink); padding:6px 14px; border-radius:999px; transition:all .15s}
+    .tab:hover{border-color:var(--accent)}
+    .tab.active{background:var(--ink); color:#fff; border-color:var(--ink)}
 
-    .item{display:block; border:1px solid var(--line); background:var(--card); padding:14px 16px; text-decoration:none; color:var(--ink); transition:border-color .15s, background .15s}
-    .item:hover{border-color:var(--green); background:#eef3ec}
-    .item .t{font-weight:600; display:block; margin-bottom:2px}
-    .item .d{font-size:13px; color:var(--muted)}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; padding-bottom:56px}
+    .card{border:1px solid var(--line); background:var(--card); padding:0 0 16px; display:flex; flex-direction:column; overflow:hidden}
+    .cover{width:100%; height:158px; object-fit:cover; object-position:top center; background:#eef0ec; display:block; border-bottom:1px solid var(--line)}
+    .card-body{padding:16px 20px 0; display:flex; flex-direction:column; flex:1}
+    .card-head{display:flex; align-items:center; gap:10px; margin-bottom:12px}
+    .num{font-family:"DM Serif Display",serif; font-size:26px; color:var(--ochre); line-height:1; min-width:34px}
+    .tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:var(--ink); border:1px solid var(--line); padding:3px 8px}
+    .size{margin-left:auto; font-size:11px; color:var(--muted)}
+    .card h3{font-size:19px; margin:0 0 6px}
+    .card h3 a{color:var(--ink); text-decoration:none}
+    .card h3 a:hover{color:var(--accent)}
+    .card .desc{font-size:13.5px; color:var(--muted); margin:0 0 12px}
+    .card .cat{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px}
+    .actions{margin-top:auto; display:flex; gap:8px}
+    .actions a{font-size:13px; font-weight:600; text-decoration:none; padding:7px 14px; border:1px solid var(--line); color:var(--ink); transition:all .15s}
+    .actions a.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
+    .actions a:hover{border-color:var(--accent)}
+    .actions a.primary:hover{background:var(--accent)}
 
-    .info{border-left:3px solid var(--green); background:var(--card); padding:14px 18px; margin:0 0 16px}
-    .empty{color:var(--muted); font-style:italic; padding:8px 0}
-    .hidden{display:none}
-
-    footer{border-top:1px solid var(--line); margin-top:24px}
-    footer .wrap{padding:20px; font-size:13px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px}
-    @media (max-width:560px){ .hero h1{font-size:28px} }
+    .empty{color:var(--muted); font-style:italic; padding:30px 0}
+    footer{border-top:1px solid var(--line)}
+    footer .wrap{padding:22px; font-size:13px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px}
+    footer a{color:var(--muted)}
+    @media (max-width:560px){ .hero h1{font-size:30px} }
   </style>
 </head>
-<body>
-  <header class="topbar">
+<body id="inicio">
+  <header class="top">
     <div class="wrap">
-      <span class="brand">Professor Alexandre Campos</span>
+      <div class="brand">
+        <div class="t">Metodologia de Pesquisa</div>
+        <div class="s">Professor Alexandre Campos</div>
+      </div>
       <a class="back" href="https://professoralexandre.com">← Portfólio</a>
     </div>
   </header>
 
   <main class="wrap">
     <div class="hero">
-      <p class="eyebrow">Escola de Governo · Mato Grosso</p>
-      <h1>Metodologia de Pesquisa</h1>
-      <p class="sub">Disciplina dos cursos de especialização &middot; Prof. Alexandre Campos</p>
+      <h1>Todos os arquivos</h1>
+      <p>Arquivo vivo da disciplina — materiais das aulas, produções dos alunos e apoios.</p>
     </div>
 
-    <!-- ============ INÍCIO (os 4 blocos) ============ -->
-    <section id="view-inicio">
-      <div class="grid">
-        <button class="block" onclick="location.hash='#alunos'">
-          <span class="t">Alunos</span><span class="d">Frequência e avaliações</span>
-        </button>
-        <button class="block" onclick="location.hash='#recursos'">
-          <span class="t">Recursos didáticos</span><span class="d">Slides, textos e demais recursos diretamente relacionados às aulas</span>
-        </button>
-        <button class="block" onclick="location.hash='#producoes'">
-          <span class="t">Produções dos alunos</span><span class="d">Fichamentos, esboços dos projetos de pesquisa</span>
-        </button>
-        <button class="block" onclick="location.hash='#textos'">
-          <span class="t">Textos de apoio</span><span class="d">Produções bibliográficas que subsidiaram a disciplina ou que podem ajudar os alunos a trilharem os caminhos da pesquisa científica</span>
-        </button>
+    <div class="toolbar">
+      <div class="search">
+        <input id="busca" type="search" placeholder="Buscar materiais…" aria-label="Buscar materiais" />
       </div>
-    </section>
+      <span class="count" id="count"></span>
+    </div>
 
-    <!-- ============ SEÇÕES DE PDF (preenchidas pelo Catálogo) ============ -->
-    <section id="view-recursos" class="hidden">
-      <button class="back" onclick="location.hash=''">← Voltar</button>
-      <h2 style="margin-top:10px">Recursos didáticos</h2>
-      <p class="lead">Slides, textos e demais recursos diretamente relacionados às aulas.</p>
-      <div class="grid" data-cards="recursos"></div>
-    </section>
+    <div class="tabs" id="tabs"></div>
 
-    <section id="view-producoes" class="hidden">
-      <button class="back" onclick="location.hash=''">← Voltar</button>
-      <h2 style="margin-top:10px">Produções dos alunos</h2>
-      <p class="lead">Fichamentos, esboços dos projetos de pesquisa.</p>
-      <div class="grid" data-cards="producoes"></div>
-    </section>
-
-    <section id="view-textos" class="hidden">
-      <button class="back" onclick="location.hash=''">← Voltar</button>
-      <h2 style="margin-top:10px">Textos de apoio</h2>
-      <p class="lead">Produções bibliográficas que subsidiaram a disciplina ou que podem ajudar os alunos a trilharem os caminhos da pesquisa científica.</p>
-      <div class="grid" data-cards="textos"></div>
-    </section>
-
-    <!-- ============ ALUNOS ============ -->
-    <section id="view-alunos" class="hidden">
-      <button class="back" onclick="location.hash=''">← Voltar</button>
-      <h2 style="margin-top:10px">Alunos — Frequência e avaliações</h2>
-
-      <h3 style="font-size:16px; margin:18px 0 6px">Critérios gerais</h3>
-      <!-- Preenchido pela planilha Catálogo: linhas com secao = criterios -->
-      <div data-texto="criterios"></div>
-
-      <h3 style="font-size:16px; margin:18px 0 6px">Observações gerais</h3>
-      <!-- Preenchido pela planilha Catálogo: linhas com secao = observacoes -->
-      <div data-texto="observacoes"></div>
-
-      <h3 style="font-size:16px; margin:18px 0 6px">Sua nota e frequência</h3>
-      <p class="muted">
-        A consulta individual (cada aluno vê apenas a sua nota e frequência, com um código pessoal)
-        será ativada na próxima etapa. <em>[Fase 2 — em preparação]</em>
-      </p>
-    </section>
+    <div class="grid" id="grid"></div>
   </main>
 
   <footer>
     <div class="wrap">
       <span>© <span id="ano"></span> Professor Alexandre Campos</span>
-      <span>escola.professoralexandre.com</span>
+      <a href="#inicio">Voltar ao início ↑</a>
     </div>
   </footer>
 
   <script>
-    // ====================== CONFIGURAÇÃO ======================
-    // Cole aqui o link da planilha "Catálogo de Materiais" publicada como CSV
-    // (Arquivo → Compartilhar → Publicar na Web → aba "Catálogo" → formato CSV).
-    // Enquanto vazio, o site mostra dados de exemplo para você ver o layout.
-    const CATALOGO_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNECfRl4jwHKhnmj7zcE09Q-Ocf-nwUCxmp99GtRjpBFx21fy-7o8HSL0Os1d8SKYiBXru4ZpN2ayP/pub?output=csv";
-    // ==========================================================
-
-    // Dados de exemplo (aparecem só enquanto o CSV acima estiver vazio).
-    const EXEMPLO = [
-      { secao:"criterios",   titulo:"", resumo:"A avaliação considera participação, fichamentos e o projeto de pesquisa final (média ponderada).", link:"" },
-      { secao:"criterios",   titulo:"", resumo:"Frequência mínima de 75% para aprovação, conforme o regulamento da Escola de Governo.", link:"" },
-      { secao:"observacoes", titulo:"", resumo:"As notas são lançadas ao longo do curso; consulte a sua na área individual, com o seu código pessoal.", link:"" },
-      { secao:"recursos",  titulo:"Aula 1 — Fundamentos da pesquisa", resumo:"Slides do primeiro encontro", link:"#" },
-      { secao:"recursos",  titulo:"Aula 2 — Problema e objetivos",    resumo:"Slides e roteiro da aula", link:"#" },
-      { secao:"producoes", titulo:"Modelo de fichamento",             resumo:"Estrutura sugerida para os fichamentos", link:"#" },
-      { secao:"textos",    titulo:"Metodologia científica (base)",    resumo:"Capítulos 1 a 3, leitura obrigatória", link:"#" },
-    ];
-
     document.getElementById('ano').textContent = new Date().getFullYear();
 
-    // ---- CSV mínimo (trata aspas e vírgulas dentro de campos) ----
-    function parseCSV(text){
-      const rows=[]; let row=[], cur="", q=false;
-      for(let i=0;i<text.length;i++){
-        const c=text[i];
-        if(q){
-          if(c==='"'){ if(text[i+1]==='"'){cur+='"';i++;} else q=false; } else cur+=c;
-        } else {
-          if(c==='"') q=true;
-          else if(c===',') { row.push(cur); cur=""; }
-          else if(c==='\n'){ row.push(cur); rows.push(row); row=[]; cur=""; }
-          else if(c==='\r'){ /* ignora */ }
-          else cur+=c;
-        }
-      }
-      if(cur!==""||row.length){ row.push(cur); rows.push(row); }
-      return rows;
-    }
-    function toObjects(rows){
-      if(!rows.length) return [];
-      const head=rows[0].map(h=>h.trim().toLowerCase());
-      return rows.slice(1).filter(r=>r.some(c=>c&&c.trim())).map(r=>{
-        const o={}; head.forEach((h,i)=>o[h]=(r[i]||"").trim()); return o;
-      });
+    const CATS = ["Todos","Materiais usados nas aulas","Produção dos alunos","Materiais de Apoio"];
+
+    // Links do Google Drive (view = Consultar, download = Baixar).
+    const dView = (id) => `https://drive.google.com/file/d/${id}/view`;
+    const dDown = (id) => `https://drive.google.com/uc?export=download&id=${id}`;
+
+    const MATERIAIS = [
+      { n:"01", tipo:"GUIA", tam:"192 KB", titulo:"Desvendando os Bastidores da Pesquisa", desc:"Guia introdutório sobre Bachelard, Gamboa e Schön.", cat:"Materiais usados nas aulas", id:"1N_SK8azk1ehBp2vXxVSS96JwJLaI2u2X" },
+      { n:"02", tipo:"AULA", tam:"476 KB", titulo:"Metodologia de Pesquisa — Aula 1", desc:"Material de referência para o primeiro encontro da disciplina.", cat:"Materiais usados nas aulas", id:"1FLnbPDWmJiPkr9FUl8J1laj95rQRtEeg" },
+      { n:"03", tipo:"ROTEIRO", tam:"609 KB", titulo:"Roteiro — Metodologia Pesquisa I", desc:"Roteiro do trabalho com os 24 problemas de pesquisa da turma.", cat:"Produção dos alunos", id:"10wnBM8RLR7EuwLryrfgov-z0re8ImzrS" },
+      { n:"04", tipo:"ARTIGO", tam:"264 KB", titulo:"Elaboração de Perguntas de Pesquisa", desc:"Artigo-base da leitura obrigatória de Iandra Coelho.", cat:"Materiais usados nas aulas", id:"1P_J_zBLLbchRweI6gbsMN2axKKCiImXs" },
+      { n:"05", tipo:"TABELA", tam:"68 KB", titulo:"Problemas de Pesquisa dos Alunos", desc:"Respostas ao formulário dos alunos, organizadas em tabela.", cat:"Produção dos alunos", id:"1p1Ps82AuULN_PQAhJVNu2Fo4kva4y4e7" },
+      { n:"07", tipo:"MODELO", tam:"147 KB", titulo:"Ficha — Métodos (alunos)", desc:"Modelo de ficha para sistematizar o método de pesquisa.", cat:"Produção dos alunos", id:"1ENrVd-ocR39h92EZiCXJzucJZKsS7zF-" },
+      { n:"09", tipo:"MODELO", tam:"153 KB", titulo:"Ficha — Projetos de Pesquisa", desc:"Modelo de ficha para estruturar projetos de pesquisa.", cat:"Produção dos alunos", id:"1WgD2iWy7msCN9SP4iwA_Zft0mWShpeOu" },
+      { n:"10", tipo:"TRANSCRIÇÃO", tam:"139 KB", titulo:"Transcrição Consolidada de Fichamentos", desc:"Transcrição revisada dos 19 fichamentos manuscritos da turma.", cat:"Produção dos alunos", id:"1reiMdoPi2M_u4CLmw0xmg49ao3v8fXVJ" },
+      { n:"11", tipo:"ARTIGO", tam:"445 KB", titulo:"Avaliação de Políticas Públicas", desc:"Artigo-base da leitura obrigatória de Souza e Loreto.", cat:"Materiais usados nas aulas", id:"1qwjJrAbhCTt7C9chzNYwF3Y6NDVuZWhB" },
+      { n:"12", tipo:"RELATÓRIO", tam:"93 KB", titulo:"Relatório Atualizado de Projetos de Pesquisa", desc:"Síntese atualizada dos projetos de pesquisa dos alunos e de seus problemas de pesquisa.", cat:"Produção dos alunos", id:"19abVMn3qDZ6hMQ4YQP-AHeV4i1sRzacQ" },
+      { n:"V", tipo:"VÍDEO", tam:"YouTube", titulo:'"Não É Um Sonho" | O Menino Que Descobriu o Vento', desc:"Vídeo de apoio para acompanhar a discussão da disciplina.", cat:"Materiais de Apoio", video:"https://youtu.be/XBaRWmMhR_4" },
+    ];
+
+    const esc=(s)=>(s||"").replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+    // Capa real (1ª página do PDF / thumb do vídeo), hospedada localmente em /capas.
+    const capa = (n) => `capas/${n}.jpg`;
+    let catAtual = "Todos";
+
+    function cardHTML(m){
+      const head = `<div class="card-head"><span class="num">${esc(m.n)}</span><span class="tag">${esc(m.tipo)}</span><span class="size">${esc(m.tam)}</span></div>`;
+      const meta = `<p class="desc">${esc(m.desc)}</p><span class="cat">${esc(m.cat)}</span>`;
+      const dest = m.video ? m.video : dView(m.id);
+      const cover = `<a href="${dest}" target="_blank" rel="noopener"><img class="cover" loading="lazy" src="${capa(m.n)}" alt="" onerror="this.style.display='none'"></a>`;
+      const t = `<h3><a href="${dest}" target="_blank" rel="noopener">${esc(m.titulo)}</a></h3>`;
+      const acts = m.video
+        ? `<div class="actions"><a class="primary" href="${m.video}" target="_blank" rel="noopener">Assistir</a><a href="${m.video}" target="_blank" rel="noopener">YouTube</a></div>`
+        : `<div class="actions"><a class="primary" href="${dView(m.id)}" target="_blank" rel="noopener">Consultar</a><a href="${dDown(m.id)}" target="_blank" rel="noopener">Baixar</a></div>`;
+      return `<article class="card">${cover}<div class="card-body">${head}${t}${meta}${acts}</div></article>`;
     }
 
-    function render(dados){
-      ["recursos","producoes","textos"].forEach(sec=>{
-        const grid=document.querySelector(`[data-cards="${sec}"]`);
-        const itens=dados.filter(d=>(d.secao||"").toLowerCase()===sec);
-        if(!itens.length){ grid.innerHTML='<p class="empty">Nenhum material publicado nesta seção ainda.</p>'; return; }
-        grid.innerHTML=itens.map(d=>{
-          const link=d.link&&d.link!=="#"?d.link:"#";
-          const tgt=link!=="#"?' target="_blank" rel="noopener"':"";
-          return `<a class="item" href="${link}"${tgt}><span class="t">${esc(d.titulo)}</span><span class="d">${esc(d.resumo)}</span></a>`;
-        }).join("");
+    function render(){
+      const q = (document.getElementById('busca').value||"").toLowerCase().trim();
+      const itens = MATERIAIS.filter(m=>{
+        const okCat = catAtual==="Todos" || m.cat===catAtual;
+        const okQ = !q || (m.titulo+" "+m.desc+" "+m.tipo).toLowerCase().includes(q);
+        return okCat && okQ;
       });
-      // Textos livres (Alunos): critérios gerais e observações gerais.
-      ["criterios","observacoes"].forEach(sec=>{
-        const box=document.querySelector(`[data-texto="${sec}"]`);
-        if(!box) return;
-        const itens=dados.filter(d=>(d.secao||"").toLowerCase()===sec);
-        if(!itens.length){ box.innerHTML='<p class="empty">A ser preenchido.</p>'; return; }
-        box.innerHTML=itens.map(d=>`<p class="info">${esc(d.resumo||d.titulo)}</p>`).join("");
-      });
-    }
-    function esc(s){return (s||"").replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
-
-    async function carregar(){
-      if(!CATALOGO_CSV_URL){ render(EXEMPLO); return; }
-      try{
-        const resp=await fetch(CATALOGO_CSV_URL);
-        const txt=await resp.text();
-        render(toObjects(parseCSV(txt)));
-      }catch(e){ render(EXEMPLO); }
+      const grid = document.getElementById('grid');
+      grid.innerHTML = itens.length ? itens.map(cardHTML).join("") : '<p class="empty">Nenhum material encontrado.</p>';
+      document.getElementById('count').textContent = `${itens.length} ${itens.length===1?"material":"materiais"}`;
     }
 
-    // ---- Navegação por hash entre os "blocos" ----
-    const VIEWS=["inicio","recursos","producoes","textos","alunos"];
-    function route(){
-      const h=(location.hash||"#").replace("#","")||"inicio";
-      const atual=VIEWS.includes(h)?h:"inicio";
-      VIEWS.forEach(v=>document.getElementById("view-"+v).classList.toggle("hidden", v!==atual));
-      window.scrollTo(0,0);
-    }
-    window.addEventListener("hashchange", route);
-    route();
-    carregar();
+    // tabs
+    const tabsEl = document.getElementById('tabs');
+    CATS.forEach(c=>{
+      const b=document.createElement('button');
+      b.className='tab'+(c==="Todos"?' active':''); b.textContent=c;
+      b.onclick=()=>{ catAtual=c; [...tabsEl.children].forEach(x=>x.classList.toggle('active', x.textContent===c)); render(); };
+      tabsEl.appendChild(b);
+    });
+    document.getElementById('busca').addEventListener('input', render);
+    render();
   </script>
 </body>
 </html>
