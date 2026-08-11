@@ -126,8 +126,8 @@
     ];
 
     const esc=(s)=>(s||"").replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-    // Capa real (1ª página do PDF / thumb do vídeo), hospedada localmente em /capas.
-    const capa = (n) => `capas/${n}.jpg`;
+    // Capa real (1ª página do PDF / thumb do vídeo), hospedada junto do site.
+    const capa = (n) => `${n}.jpg`;
     let catAtual = "Todos";
 
     function cardHTML(m){
